@@ -55,12 +55,12 @@ type ObservableState {
 }
 
 
-# State transform function, Kelvin to Celcius
+#State transform function, Kelvin to Celcius
 function TransformState (s: SimState): ObservableState {
-    return {
-        Cr: number<conc_min .. conc_max>,
+   return {
+        Cr: s.Cr,
         Tr_C: s.Tr - 272.15,
-        Cref: number<conc_min .. conc_max>,
+        Cref: s.Cref,
         Tc_C: s.Tc - 272.15,
     }
 }
